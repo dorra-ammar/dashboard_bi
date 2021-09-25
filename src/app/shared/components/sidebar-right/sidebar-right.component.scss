@@ -1,0 +1,49 @@
+.text{
+  margin-top: 0px;
+  background: #aec9ec;
+  height: 55px;
+}
+h2 {
+  margin-left: 2em;
+   color: #ffffff;
+  position: relative;
+  top: 6px;
+}
+.addIcon {
+  //margin-left: 200px;
+  color: #ffffff;
+  margin-left: 10px;
+  cursor:pointer;
+
+}
+h1 {
+  margin-left: 2.5em;
+  color: hotpink;
+}
+ul li {
+  list-style: none;
+}
+.mat-button{
+  position: absolute;
+  right: 35%;
+  margin-top: 30px ;
+}
+.mat-new-button{
+  position: absolute;
+  left: 12%;
+  margin-top: 30px ;
+
+}
+.togglegroup {
+  flex-wrap: wrap;
+}
+.divider{
+  width: 40px;
+}
+.mattoggle{
+  flex: 1 60px;
+}
+mat-nav-list{
+  margin-top: 0px;
+}
+

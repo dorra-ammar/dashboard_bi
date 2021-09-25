@@ -1,0 +1,61 @@
+<div class="example-container">
+  <h2 MatSubheader>Dimensions</h2>
+  <cdk-virtual-scroll-viewport appendOnly itemSize="50" class="example-viewport">
+      <div
+        cdkDropList
+        id="list-1"
+        [cdkDropListConnectedTo]="['list-2','list-4']"
+        [cdkDropListData]="dimensions"
+        class="example-list"
+        (cdkDropListDropped)="drop2($event)">
+        <div class="example-box" *ngFor="let item of dimensions" cdkDrag>
+          {{item}}
+        </div>
+      </div>
+  </cdk-virtual-scroll-viewport>
+<!--  <div-->
+<!--    cdkDropList-->
+<!--    id="list-1"-->
+<!--    [cdkDropListConnectedTo]="['list-2','list-4']"-->
+<!--    [cdkDropListData]="Dimensions"-->
+<!--    class="example-list"-->
+<!--    (cdkDropListDropped)="drop2($event)">-->
+<!--    <div class="example-box" *ngFor="let item of Dimensions" cdkDrag>-->
+<!--      {{item}}-->
+<!--    </div>-->
+
+<!--  </div>-->
+</div>
+<div class="example-container">
+  <h2 MatSubheader>Mesures</h2>
+  <cdk-virtual-scroll-viewport appendOnly itemSize="50" class="example-viewport">
+    <div
+      cdkDropList
+      id="list-3"
+      [cdkDropListConnectedTo]="['list-2','list-4']"
+      [cdkDropListData]="mesures"
+      class="example-list"
+      (cdkDropListDropped)="drop2($event)">
+      <div class="example-box" *ngFor="let item of mesures" cdkDrag>
+        {{item}}
+      </div>
+    </div>
+
+  </cdk-virtual-scroll-viewport>
+
+<!--  <div-->
+<!--    cdkDropList-->
+<!--    id="list-3"-->
+<!--    [cdkDropListConnectedTo]="['list-2','list-4']"-->
+<!--    [cdkDropListData]="Mesures"-->
+<!--    class="example-list"-->
+<!--    (cdkDropListDropped)="drop2($event)">-->
+<!--    <div class="example-box" *ngFor="let item of Mesures" cdkDrag>-->
+<!--      {{item}}-->
+<!--      <div>-->
+<!--        <mat-divider></mat-divider>-->
+<!--      </div>-->
+<!--    </div>-->
+
+<!--  </div>-->
+</div>

@@ -1,0 +1,43 @@
+<mat-toolbar-row class="text">
+  <h2 MatSubheader>Visualisations</h2>
+  <mat-icon class="addIcon" (click)="createNewChart()">add</mat-icon>
+</mat-toolbar-row>
+<section>
+  <div class="example-button-row">
+    <mat-button-toggle-group class="togglegroup" name="fontStyle" aria-label="Font Style" value="{{selectedChart}}">
+      <mat-button-toggle
+        class="mattoggle"
+        *ngFor="let chart of chartsList"
+        value="{{chart.name}}"
+        matTooltip="{{chart.name}}"
+        aria-label="Button that displays a tooltip when focused or hovered over"
+        (click)="selectChart(chart.name)">
+        <mat-icon>{{chart.icon}}</mat-icon>
+      </mat-button-toggle>
+    </mat-button-toggle-group>
+  </div>
+</section>
+  <div *ngIf="selectedChart!=''">
+  <mat-divider></mat-divider>
+  <h1 MatSubheader>{{selectedChart}}</h1>
+  <mat-divider></mat-divider>
+  <mat-button-toggle-group class="togglegroup" name="fontStyle" aria-label="Font Style" value="{{selectedTool}}">
+    <mat-button-toggle *ngFor="let tool of toolsList;" (click)="addComlunm(tool.name)" value="{{tool.name}}">
+      <mat-icon>{{tool.icon}}</mat-icon>
+    </mat-button-toggle>
+  </mat-button-toggle-group>
+  <mat-divider></mat-divider>
+  <app-add-column [dimension]="dimension" [mesure]="mesure" (mesureEdited)="editMesure($event)" (dimensionEdited)="editDimension($event)" *ngIf="addComponent"></app-add-column>
+  <app-chart-design *ngIf="disgnComponent"></app-chart-design>
+    <app-filtering *ngIf="filterComponent"></app-filtering>
+
+  <div class="example-button-row">
+    <button *ngIf="!update" class="mat-button" [disabled]="bool" (click)="drawChart()" mat-raised-button color="accent">
+      Submit
+    </button>
+<!--    <button *ngIf="!update" class="mat-button"(click)="drawChartAfterFilter()" mat-raised-button color="accent">-->
+<!--      submitAfterFiltring-->
+<!--    </button>-->
+    <button *ngIf="update" class="mat-button" mat-raised-button color="accent" (click)="updateChart()">Update</button>
+  </div>
+</div>

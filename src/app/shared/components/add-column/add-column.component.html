@@ -1,0 +1,35 @@
+<div class="example-container">
+  <h2>Axe</h2>
+  <div style="min-height: 40px;"
+       cdkDropList
+       id="list-4"
+       [cdkDropListData]="doneDimension"
+       class="example-list"
+       (cdkDropListDropped)="drop($event)">
+    <div class="example-box" *ngFor="let item of doneDimension; let i = index">
+      <div class="wrapper" cdkDrag>
+        <button class="super-button primary">{{item}}
+          <mat-icon (click)="removeDimension(i)">close</mat-icon>
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="example-container">
+  <h2>Valeur</h2>
+
+  <div style="min-height: 40px;"
+       cdkDropList
+       id="list-2"
+       [cdkDropListData]="doneMesure"
+       class="example-list"
+       (cdkDropListDropped)="drop($event)">
+    <div class="example-box" *ngFor="let item of doneMesure; let i = index">
+      <div class="wrapper" cdkDrag>
+        <button class="super-button primary">{{item}}
+          <mat-icon class="margin-left" (click)="removeMesure(i)">close</mat-icon>
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

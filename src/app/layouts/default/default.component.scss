@@ -1,0 +1,17 @@
+:host{
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+.right-sidnav {
+  width: 270px;
+}
+.left-sidnav {
+  width: 250px;
+}
+mat-drawer-container {
+  height: 100%;
+}
+mat-drawer-content {
+  padding: 20px;
+}

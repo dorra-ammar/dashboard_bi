@@ -1,0 +1,52 @@
+<form class="example-form">
+  <mat-grid-list cols="4" rowHeight="100px">
+    <mat-grid-tile [colspan]="3">
+      <mat-form-field class="example-full-width col-md-6" appearance="fill">
+        <mat-label>mesure</mat-label>
+        <input type="text"
+               placeholder="Pick one"
+               aria-label="Number"
+               matInput
+               [formControl]="myControl"
+               [(ngModel)]="selectedMesureStringValue"
+               [matAutocomplete]="auto">
+        <mat-autocomplete autoActiveFirstOption #auto="matAutocomplete">
+          <mat-option *ngFor="let option of filteredOptions | async" [value]="option">
+            {{option}}
+          </mat-option>
+        </mat-autocomplete>
+        <button *ngIf="selectedMesureStringValue" matSuffix mat-icon-button aria-label="Clear" (click)="selectedMesureStringValue=''">
+          <mat-icon>close</mat-icon>
+        </button>
+      </mat-form-field>
+    </mat-grid-tile>
+    <mat-grid-tile [colspan]="1">
+      <button mat-icon-button aria-label="Example icon-button with a heart icon">
+        <mat-icon (click)="addMesureToTextArea()">add</mat-icon>
+      </button>
+    </mat-grid-tile>
+  </mat-grid-list>
+  <form class="example-container" #form="ngForm">
+    <div>
+      <mat-form-field  style="width: 90%; margin: 10px;">
+        <textarea matInput name="query" cols="50" rows="10" placeholder="Query Text" [(ngModel)]="queryText"></textarea>
+      </mat-form-field>
+    </div>
+  </form>
+  <button (click)="addFilter()"> filter </button>
+<!--  <mat-form-field>-->
+<!--  <textarea matInput-->
+<!--            placeholder="Description"-->
+<!--            [formControl]="descFC"-->
+<!--            cdkTextareaAutosize-->
+<!--            cdkAutosizeMinRows="2"-->
+<!--            cdkAutosizeMaxRows="5"-->
+<!--            #autosize="cdkTextareaAutosize"-->
+<!--            (change)="onDescChange()">-->
+<!--  </textarea>-->
+<!--    <mat-error *ngIf="descFC.hasError('required')">-->
+<!--      Description is required.-->
+<!--    </mat-error>-->
+<!--  </mat-form-field>-->
+</form>
+

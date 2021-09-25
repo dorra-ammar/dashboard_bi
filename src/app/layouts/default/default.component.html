@@ -1,0 +1,28 @@
+<app-header (toggleSideBarForMe)="sideBarToggler()" (toggleSideBarForMeRight)="sideBarTogglerRight()" ></app-header>
+<mat-drawer-container>
+  <mat-drawer class="left-sidnav" mode="side" [opened]="sideBarOpen">
+    <app-sidebar></app-sidebar>
+  </mat-drawer>
+  <mat-drawer-content>
+    <router-outlet></router-outlet>
+  </mat-drawer-content>
+  <mat-drawer class="right-sidnav" mode="side" [opened]="sideBarOpenRight" position="end">
+    <app-sidebar-right></app-sidebar-right>
+  </mat-drawer>
+</mat-drawer-container>
+
+
+
+
+
+
+
+<!--<mat-drawer-container class="example-container">-->
+<!--  <mat-drawer #sideNav mode="side" opened="true" position="end">-->
+<!--    Right drawer-->
+<!--  </mat-drawer>-->
+<!--  <mat-drawer-content>-->
+<!--    <router-outlet></router-outlet>-->
+<!--  </mat-drawer-content>-->
+<!--</mat-drawer-container>-->
+

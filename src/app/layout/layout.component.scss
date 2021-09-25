@@ -1,0 +1,19 @@
+:host{
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+.right-sidnav {
+  width: 248px;
+}
+.left-sidnav {
+  width: 200px;
+  //background: #2d46a7;
+  background: #aec9ec;
+}
+mat-drawer-container {
+  height: 100%;
+}
+mat-drawer-content {
+  padding: 20px;
+}
